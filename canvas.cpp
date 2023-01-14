@@ -1,16 +1,3 @@
-////////////////////////////////////////////////////////////////////////////////////        
-// canvas.cpp
-//
-// This program allows the user to draw simple shapes on a canvas.
-//
-// Interaction:
-// Left click on a box on the left to select a primitive.
-// Then left click on the drawing area: once for point, twice for line or rectangle.
-// Right click for menu options.
-//
-//  Sumanta Guha.
-//////////////////////////////////////////////////////////////////////////////////// 
-
 #include <cstdlib>
 #include <vector>
 #include <iostream>
@@ -39,7 +26,7 @@ using namespace std;
 
 // Globals.
 static int width, height; // OpenGL window size.
-static float pointSize = 3.0; // Size of point
+static float pointSize = 10.0; // Size of point
 static int primitive = INACTIVE; // Current drawing primitive.
 static int pointCount = 0; // Number of  specified points.
 static int tempX, tempY; // Co-ordinates of clicked point.
@@ -175,8 +162,8 @@ void drawPointSelectionBox(void)
    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
    glRectf(0.0, 0.9*height, 0.1*width, height);
 
-   // Draw black boundary.
-   glColor3f(0.0, 0.0, 0.0); 
+   // Draw green boundary.
+   glColor3f(0.0, 1.0, 0.0); 
    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
    glRectf(0.0, 0.9*height, 0.1*width, height); 
 
@@ -196,8 +183,8 @@ void drawLineSelectionBox(void)
    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
    glRectf(0.0, 0.8*height, 0.1*width, 0.9*height);
 
-   // Draw black boundary.
-   glColor3f(0.0, 0.0, 0.0);
+   // Draw green boundary.
+   glColor3f(0.0, 1.0, 0.0);
    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
    glRectf(0.0, 0.8*height, 0.1*width, 0.9*height);
 
@@ -218,7 +205,7 @@ void drawRectangleSelectionBox(void)
    glRectf(0.0, 0.7*height, 0.1*width, 0.8*height);
 
    // Draw black boundary.
-   glColor3f(0.0, 0.0, 0.0);
+   glColor3f(0.0, 1.0, 0.0);
    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
    glRectf(0.0, 0.7*height, 0.1*width, 0.8*height);
 
